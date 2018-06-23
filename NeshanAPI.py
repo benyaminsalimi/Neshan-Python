@@ -8,7 +8,6 @@ class NeshanAPI(object):
         self.header['user-agent'] = 'Neshan API Python lib'
         self.api_url = 'https://api.neshan.org/v1/'
 
-
     def Test_Api_Key(self):
         url = 'https://api.neshan.org/v1/search'
         req = requests.get(url=url, headers=self.header)
@@ -48,6 +47,7 @@ class NeshanAPI(object):
         param = {}
         param['lat'] = latitude
         param['lng'] = longitude
+        print(self.header)
         req = requests.get(url=url, headers=self.header , params=param)
         return req.json()
 
@@ -64,4 +64,3 @@ class NeshanAPI(object):
 
         req = requests.get(url=url, headers=self.header, params=param)
         return req.json()
-
